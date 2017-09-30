@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="lib/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="main">
+    <div class="navbar">
+      <h1>记事本</h1>
+    </div>
+    <div class="header">
+      水溶C真的好喝
+    </div>
+    <form @submit.prevent="merge" id="task-form">
+      <div class="wrap">
+        <input v-model="current.title" type="text" id="task-input" autocomplete="off">
+        <button type="submit" name="button">submit</button>
+      </div>
+    </form>
+    <div class="task-list">
+      <div class="wrap">
+        未完成：
+        <div v-if="!todo.completed" v-for="(todo, index) in list" class="item">
+          <button @click="toggle_complete(todo.id)">完成</button>
+          {{todo.title}} {{index}}
+          <button @click="remove(todo.id)">删除</button>
+          <button @click="set_current(todo)">更新</button><!--!!??把当前的这一条指向current对象-->
+        </div>
+      </div>
+    </div>
+
+    <div class="task-list">
+      <div class="wrap">
+        已完成：
+        <div v-if="todo.completed" v-for="(todo, index) in list" class="item completed">
+          <button @click="toggle_complete(todo.id)">未完成</button>
+          {{todo.title}} {{index}}
+          <button @click="remove(todo.id)">删除</button>
+          <button @click="set_current(todo)">更新</button><!--!!??把当前的这一条指向current对象-->
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
+  <script type="text/javascript" src="js/myStorage.js"></script>
+  <script type="text/javascript" src="lib/vue.js"></script>
+  <script type="text/javascript" src="js/man.js"></script>
+</body>
+</html>

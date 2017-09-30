@@ -1,0 +1,40 @@
+* {
+  background: rgba(0,0,0,.05);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+.navbar, .header {
+  text-align: center;
+}
+.navbar {
+  background: #999;
+  color: yellow;
+  padding: 10px 0;
+}
+
+.navbar h1 {
+  font-size: 24px;
+  margin: 0;
+}
+.header {
+  padding: 20px 0;
+  color: red;
+}
+.wrap {
+  max-width: 500px;
+  margin: 0 auto;
+
+}
+input, button{
+
+
+   border: 1px solid rgab(0,0,0,.1);
+   padding: 5px 10px;
+   border-radius: 5px;
+ }
+ input {
+display: block;
+width: 100%;
+ }
